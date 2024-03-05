@@ -88,7 +88,7 @@ const Login = () => {
             setError(false)
             const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Administrator", data)
                 setCookie("auth_token", response.data.Token)
-                window.localStorage.setItem("UserID", response.data.UserID)
+                window.localStorage.setItem("UserID", "Administrator")
                 enqueueSnackbar("Logged in successfully!" , { 
                     variant: 'success',
                     anchorOrigin: {

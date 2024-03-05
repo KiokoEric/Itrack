@@ -3,7 +3,7 @@ import Axios from "axios";
 import "../Project_Details/Project_Details.css";
 import ProjectImage from "../../../Images/ProjectImage.png";
 import Moment from 'react-moment';
-import LoadingGif from "../../Images/LoadingGif.gif";
+import LoadingGif from "../../../Images/LoadingGif.gif";
 import { Link  } from 'react-router-dom';
 import { useCookies } from "react-cookie";
 import { useParams } from 'react-router-dom';

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+
+.Register section:first-child {
+    background-image: url("../../../Images/Registration_Image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: auto;
+    margin-top: 1rem;
+    width: 1150px;
+} 
+.Register section:first-child h1 {
+    color: white;
+    font-size: 50px;
+} 
+.Register section:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    margin-top: 2.5rem;
+    margin-bottom: 4.5rem;
+}
+.Register form {
+    margin-top: 0.5rem;
+}
+.Register form h1 {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 0.5rem;
+    padding: 0.55rem 2rem;
+    text-align: center;
+    width: 400px;
+}
+.Register form div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+.Register div article {
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    flex-direction:row;
+}
+.Register form div label {
+    text-align: left;
+}
+.Register form input {
+    border-radius: 3px;
+    height: 40px;
+    outline: 0;
+    width: 400px;
+}
+.Register form input[type="text"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Register form input[type="email"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Register form input[type="number"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Register form input[type="Password"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Register form label P {
+    font-weight: bold;
+}
+.Register form select {
+    border: 2px solid black;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    height: 2.5rem;
+    padding-left: 0.65rem;
+    width: 400px;
+}
+.Register form select option {
+    height: 100px;
+}
+.Error {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+.Register form button {
+    background-color: var(--DarkBlue);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 400px;
+}

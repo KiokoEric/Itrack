@@ -1,0 +1,55 @@
+.TypeLabels {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 320px;
+}
+.TypeLabels article {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.TypeLabels article h3 {
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+.TypeLabels section {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.TypeLabels article section:last-child { 
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    margin-top: 0rem;
+}
+.TypeLabels article p {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+.Indicator {
+    content: "";
+    background-color: blue;
+    border-radius: 4px;
+    height: 20px;
+    margin-top: 0.35rem;
+    width: 10px;
+}
+.Defect {
+    background-color:#0E2954;
+}
+.Documentation {
+    background-color:#1F6E8C;
+}
+.Enhancement {
+    background-color:#03001C; 
+}
+.Feature {
+    background-color: #301E67; 
+}
+.Hardware {
+    background-color: #43766C; 
+}

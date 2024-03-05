@@ -1,0 +1,146 @@
+.Gif {
+    margin: auto;
+    width: 1200px;
+}
+.Loading {
+    display: block;
+    margin: auto;
+    width: 800px;
+}
+.MoreInformation {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+    row-gap: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    padding-bottom: 2.5rem;
+    width: 1100px;
+}
+.MoreInformation figure {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+    width: 700px; 
+}
+.MoreInformation figure img { 
+    border-radius: 4px;
+}
+.MoreInformation figure div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.MoreInformation figure h2 {
+    margin-bottom: 0.5rem;
+}
+.MoreInformation figcaption h3 {
+    margin-top: 1.2rem;
+    text-decoration: underline;
+}
+.MoreInformation figcaption div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+}
+.MoreInformation figcaption p {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+.MoreInformation figcaption li {
+    margin-top: 0.5rem;
+}
+.Edit {
+    background-color: orangered;
+    border-radius: 3px;
+    color: white;;
+    font-size: 20px;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+}
+.ProjectTickets table {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+    width: 1150px;
+}
+.ProjectTickets thead {
+    background-color: var(--DarkGreen);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    padding: 0.5rem 0rem;
+}
+.ProjectTickets th {
+    color: white;
+    font-weight: normal;
+    width: 110px;
+}
+.ProjectTickets th:nth-child(3) {
+    margin-left: -1.5rem;
+    margin-right: 1rem;
+    width: 200px;
+}
+.ProjectTickets th:nth-child(5) {
+    margin-left: 0.5rem;
+}
+.ProjectTickets th:nth-child(6) {
+    margin-left: 3.2rem;
+}
+.ProjectTickets th:nth-child(8) {
+    margin-left: -0.5rem;
+}
+.ProjectTickets tbody {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.4rem;
+    padding: 0rem 1.8rem;
+    padding-bottom: 0.5rem;
+}
+.ProjectTickets td {
+    width: 110px;
+}
+.ProjectTickets td div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8rem;
+}
+.PriorityDisplay {
+    background-color: #092635; 
+    border-radius: 2px;
+    color: white;
+    padding: 0.15rem 0.65rem;
+}
+.StatusDisplay {
+    background-color: #5C8374;
+    border-radius: 2px;
+    color: white;
+    padding: 0.15rem 0.65rem;
+}
+.ProjectTickets td:nth-child(3) {
+    padding-left: 1.5rem;
+    width: 200px;
+}
+.ProjectTickets td:nth-child(5) {
+    padding-left: 1rem;
+    width: 180px;
+}
+.ProjectTickets td:nth-child(6) {
+    width: 130px;
+}
+#EditActions {
+    color: green;
+    margin-left: 3.2rem;
+}
+#DeleteActions {
+    color: red;
+    cursor: pointer;
+}

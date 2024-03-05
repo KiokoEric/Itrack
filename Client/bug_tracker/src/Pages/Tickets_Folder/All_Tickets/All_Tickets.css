@@ -1,0 +1,210 @@
+.AllTickets {
+    width: 1150px;
+}
+.AllTickets section:first-child {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/All_Tickets2.jpg");
+    background-position: center;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.AllTickets section:first-child h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+.TicketSummary {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+}
+.TicketSummary div {
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+    height: 90px;
+    width: 380px;
+}
+#HighPriority {
+    background-color: #10316B;
+}
+#CriticalPriority{
+    background-color: rgb(153, 12, 12);
+}
+#OpenTickets {
+    background-color: #3C0753;
+}
+#InProgressTickets {
+    background-color: #0B8457;
+}
+.TicketSummary h1 { 
+    font-size: 30px;
+}
+.TicketSummary h2 {
+    font-size: 30px;
+}
+.AllTickets table {
+    display: flex;
+    flex-direction: column;
+}
+.AllTickets table thead {
+    background-color: var(--DarkGreen);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    padding: 0.5rem 0rem;
+}
+.AllTickets th {
+    color: white;
+    font-weight: normal;
+    width: 110px;
+}
+.AllTickets th:nth-child(3) {
+    margin-left: -1.5rem;
+    margin-right: 1rem;
+    width: 200px;
+}
+.AllTickets th:nth-child(5) {
+    margin-left: 0.5rem;
+}
+.AllTickets th:nth-child(6) {
+    margin-left: 3.2rem;
+}
+.AllTickets th:nth-child(8) {
+    margin-left: 0.8rem;
+}
+.AllTicketsDisplay {
+    height: 500px;
+    overflow-y: scroll;
+}
+.AllTickets tbody {
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    padding-bottom: 0.5rem; 
+}
+.AllTickets tr {
+    width: 110px;
+}
+.TicketLink {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.6rem;
+    text-decoration: none;
+}
+.AllTickets tbody div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.8rem;
+}
+.PriorityDisplay {
+    background-color: #092635; 
+    border-radius: 2px;
+    color: white;
+    padding: 0.15rem 0.65rem;
+}
+.StatusDisplay {
+    background-color: #5C8374;
+    border-radius: 2px;
+    color: white;
+    padding: 0.15rem 0.65rem;
+}
+.AllTickets tr:nth-child(3) {
+    padding-left: 1.5rem;
+    width: 200px;
+}
+.AllTickets tr:nth-child(5) {
+    padding-left: 1rem;
+    width: 180px;
+}
+.AllTickets tr:nth-child(6) {
+    width: 130px;
+}
+.DateTicket{
+    width: 10px;
+}
+#EditAction {
+    color: green;
+    display: inline-block;
+    margin-left: -0.45rem;
+    position: relative;
+}
+#EditAction:hover::after {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    content: "Edit Ticket";
+    color: black;
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%); 
+    width: 75px;
+    z-index: 1;
+}
+#DeleteAction {
+    color: red;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#DeleteAction:hover::after {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    content: "Delete Ticket";
+    color: black;
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 75px;
+    z-index: 1;
+}
+#ArchiveIcon {
+    color: var(--DarkBlue);
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#ArchiveIcon:hover::after{
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    content: "Archive Ticket";
+    color: black;
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 75px;
+    z-index: 1;
+}

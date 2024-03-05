@@ -1,0 +1,60 @@
+.ArchivedProjectSection {
+    display: flex;
+    flex-direction: column;
+}
+.ProjectDetails {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+    row-gap: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    width: 1200px;
+}
+.ProjectDetails figure {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    width: 600px; 
+}
+.ProjectDetails figure img { 
+    border-radius: 4px;
+    width: 500px;
+}
+.ProjectDetails figure div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.ProjectDetails figure h2 {
+    margin-bottom: 0.5rem;
+}
+.ProjectDetails figcaption h3 {
+    margin-top: 1.2rem;
+    text-decoration: underline;
+}
+.ProjectDetails figcaption div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2.5rem;
+}
+.ProjectDetails figcaption p {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+.Edit {
+    background-color: orangered;
+    border-radius: 3px;
+    color: white;;
+    font-size: 20px;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+}

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+
+.Profile section:first-child {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("../../../Images/Profile_HomePage.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 1150px;
+} 
+.Profile section:first-child h1 {
+    color: white;
+    font-size: 50px;
+} 
+.Profile section:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+}
+#User {
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    font-size: 80px;
+    padding: 2rem 2rem;
+    z-index: 2;
+}
+.Profile form {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.Profile form h1 {
+    background-color: black;
+    color: white;
+    margin-bottom: 0.5rem;
+    padding: 0.55rem 2rem;
+    text-align: center;
+    width: 400px;
+}
+.Profile form div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.65rem;
+    margin-bottom: 0.5rem;
+}
+.Profile form div:last-child {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+}
+.Profile form div label {
+    text-align: left;
+}
+.Profile form input {
+    border-radius: 3px;
+    height: 40px;
+    outline: 0;
+    width: 400px;
+}
+.Profile form input[type="text"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Profile form input[type="email"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Profile form input[type="number"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Profile form input[type="Password"] {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    padding-left: 0.65rem;
+}
+.Profile form label p {
+    font-weight: bold;
+}
+.Error {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+.Profile form button {
+    background-color: black;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    width: 150px;
+}
+.Profile form button i {
+    margin-right: 0.65rem;
+}
+

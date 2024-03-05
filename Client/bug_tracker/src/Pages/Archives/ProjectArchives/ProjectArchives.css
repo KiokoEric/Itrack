@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+
+.ProjectArchive section:first-child {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../Images/Project_Archives.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Serif', serif;
+    height: 150px;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    width: 1150px;
+}
+.ProjectArchive h1 {
+    color: white;
+    font-size: 50px;
+}
+.ProjectArchive p {
+    color: black;
+}
+.ProjectArchive section:last-child {
+    display: grid;
+    grid-template-columns: 365px 365px 365px;
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.MyLink {
+    color: black;
+    text-decoration: none;
+}
+.Information {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 4.5rem;
+    text-decoration: none;
+    width: 350px;
+}
+.Information img {
+    border-radius: 4px;
+    height: 250px;
+    width: 350px;
+}
+.Information div {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.Information figcaption h2 {
+    margin-bottom: 0.5rem;
+}
+#DeleteDetails {
+    background-color: var(--LightGreen); 
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem;
+}
+#DeleteDetails:hover {
+    background-color: black;
+    color: var(--LightGreen);
+}
+#DeleteDetails:hover::after {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: black;
+    content: "Delete Project";
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 70px;
+    z-index: 1;
+}
+#RestoreProject {
+    background-color: var(--LightGreen); 
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem;
+}
+#RestoreProject:hover {
+    background-color: black;
+    color: var(--LightGreen);
+}
+#RestoreProject:hover::after {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: black;
+    content: "Restore Project";
+    font-family: 'Instrument Serif', serif;
+    font-size: 15px;
+    padding: 5px;
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 80px;
+    z-index: 1;
+}
+.Failure {
+    color: red;
+    font-size: 40px;
+    text-align: center;
+    width: 1100px;
+}

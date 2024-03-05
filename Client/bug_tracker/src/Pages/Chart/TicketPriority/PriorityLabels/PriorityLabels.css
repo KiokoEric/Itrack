@@ -1,0 +1,52 @@
+.PriorityLabels {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 320px;
+}
+.PriorityLabels article:last-child {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+.PriorityLabels article section {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.PriorityLabels article h3 {
+    font-size: 22px;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+}
+.PriorityLabels article section:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    column-gap: 1rem;
+    margin-top: 0rem;
+}
+.PriorityLabels article p {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+.Indicator {
+    content: "";
+    border-radius: 5px;
+    height: 15px;
+    margin-top: 0.35rem;
+    width: 10px;
+}
+.High {
+    background-color:#005B41;
+}
+.Medium {
+    background-color:#232D3F;
+}
+.Low {
+    background-color:#0F0F0F; 
+}
+.Critical {
+    background-color: #301E67; 
+}

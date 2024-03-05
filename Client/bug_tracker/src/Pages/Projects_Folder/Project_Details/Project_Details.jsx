@@ -27,7 +27,7 @@ const Project_Details = () => {
             setProjects(Response.data)
             setAssigned(Response.data.Assigned)
             setProjectName(Response.data.Title)
-        })
+        }) 
     },[]) 
 
     useEffect(() => {

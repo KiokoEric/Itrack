@@ -1,7 +1,6 @@
 import React from 'react';
 import Axios from "axios";
 import "../DeleteProfile/DeleteProfile.css"
-import { useGetUserID } from "../../../Components/Hooks/UseGetUserID";
 import { useCookies } from "react-cookie";
 import {useNavigate, useParams} from "react-router-dom";
 

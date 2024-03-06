@@ -25,7 +25,7 @@ const Ticket = () => {
     useEffect(() => {
 
         const FetchHighPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/High`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/High`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -34,7 +34,7 @@ const Ticket = () => {
         } 
 
         const FetchCriticalPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/Critical`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/Critical`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -43,7 +43,7 @@ const Ticket = () => {
         } 
 
         const FetchOpen = () => {
-            Axios.get(`http://localhost:4000/Issues/StatusLength/Open`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/StatusLength/Open`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -52,7 +52,7 @@ const Ticket = () => {
         } 
 
         const FetchProgressStatus = () => {
-            Axios.get(`http://localhost:4000/Issues/StatusLength/In_Progress`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/StatusLength/In_Progress`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -75,7 +75,7 @@ const Ticket = () => {
          // Fetch Tickets
 
         const FetchTickets = () => {
-            Axios.get(`http://localhost:4000/Issues/AllIssues`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/AllIssues`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -90,7 +90,7 @@ const Ticket = () => {
         // Fetch Projects
 
         const FetchProjects = async () => {
-            await Axios.get(`http://localhost:4000/Projects/AllProjects`, {
+            await Axios.get(`https://itrack-server-9s7w.onrender.com/Projects/AllProjects`, {
             headers: { authorization: Cookie.auth_token },
             
             }) 
@@ -105,7 +105,7 @@ const Ticket = () => {
         },[])
 
     const handleDelete= (_id) => {
-        Axios.delete(`http://localhost:4000/Issues/${_id}`, {
+        Axios.delete(`https://itrack-server-9s7w.onrender.com/Issues/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         })
         .then(
@@ -115,7 +115,7 @@ const Ticket = () => {
 
     const handleArchive= (ID) => {
         try {
-            Axios.post(`http://localhost:4000/Issues/moveTicket/${ID}`, ID ,  {
+            Axios.post(`https://itrack-server-9s7w.onrender.com/Issues/moveTicket/${ID}`, ID ,  {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(() => { 

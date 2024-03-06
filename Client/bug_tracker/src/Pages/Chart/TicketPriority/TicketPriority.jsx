@@ -24,7 +24,7 @@ const TicketPriority = () => {
     useEffect(() => {
 
         const FetchLowPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/Low`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/Low`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -33,7 +33,7 @@ const TicketPriority = () => {
         } 
 
         const FetchMediumPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/Medium`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/Medium`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -42,7 +42,7 @@ const TicketPriority = () => {
         } 
 
         const FetchHighPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/High`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/High`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -51,7 +51,7 @@ const TicketPriority = () => {
         } 
 
         const FetchCriticalPriority = () => {
-            Axios.get(`http://localhost:4000/Issues/PriorityLength/Critical`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/PriorityLength/Critical`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

@@ -52,7 +52,7 @@ const Edit_Ticket = () => {
     }
 
     useEffect(() => {
-        Axios.get(`http://localhost:4000/Issues/${id}`, {
+        Axios.get(`https://itrack-server-9s7w.onrender.com/Issues/${id}`, {
                 headers: { authorization: Cookie.auth_token },
             }) 
         .then((Data) => { 
@@ -73,7 +73,7 @@ const Edit_Ticket = () => {
             Title, Projects, Description, Category, Priority, Status, Submitted, userOwner
         }
         try {
-            Axios.put(`http://localhost:4000/Issues/${id}`, data , {
+            Axios.put(`https://itrack-server-9s7w.onrender.com/Issues/${id}`, data , {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(() => { 
@@ -88,7 +88,7 @@ const Edit_Ticket = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`http://localhost:4000/Users/`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -104,7 +104,7 @@ const Edit_Ticket = () => {
     useEffect(() => {
 
         const FetchProject = () => {
-            Axios.get(`http://localhost:4000/Projects/AllProjects`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Projects/AllProjects`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

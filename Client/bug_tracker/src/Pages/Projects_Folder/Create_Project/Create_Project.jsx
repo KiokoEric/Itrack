@@ -92,7 +92,7 @@ const Create_Project = () => {
                 Title, Description, Priority, StartDate, EndDate, Manager, Assigned, Image, userOwner
             }
             try {
-                Axios.post("http://localhost:4000/Projects/AddProject", data , {
+                Axios.post("https://itrack-server-9s7w.onrender.com/Projects/AddProject", data , {
                     headers: { authorization: Cookie.auth_token },
                 }) 
                 .then(() => { 
@@ -108,7 +108,7 @@ const Create_Project = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`http://localhost:4000/Users/`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

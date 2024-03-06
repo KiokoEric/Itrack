@@ -32,7 +32,7 @@ const Login = () => {
             Email, Password
         }
         try {
-            const response = await Axios.post("http://localhost:4000/Users/Login", data)
+            const response = await Axios.post("https://itrack-server-9s7w.onrender.com/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
                 enqueueSnackbar("Logged in successfully!" , { 
@@ -60,7 +60,7 @@ const Login = () => {
             Email : "kiokoerick040@gmail.com" , Password : "Victory2024"
         }
         try {
-            const response = await Axios.post("http://localhost:4000/Users/Login", data)
+            const response = await Axios.post("https://itrack-server-9s7w.onrender.com/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
                 enqueueSnackbar("Logged in successfully!" , { 
@@ -88,7 +88,7 @@ const Login = () => {
             Email : "abeldamina@gmail.com" , Password : "Triumph2024"
         }
         try {
-            const response = await Axios.post("http://localhost:4000/Users/Administrator", data)
+            const response = await Axios.post("https://itrack-server-9s7w.onrender.com/Users/Administrator", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("Administrator", "Administration")
                 enqueueSnackbar("Logged in successfully!" , { 

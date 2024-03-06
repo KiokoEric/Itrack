@@ -19,7 +19,7 @@ const My_Projects = () => {
     useEffect(() => {
 
     const fetchProjects = async () => {
-        await Axios.get(`http://localhost:4000/Projects//${userID}/Project`, {
+        await Axios.get(`https://itrack-server-9s7w.onrender.com/Projects//${userID}/Project`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 
@@ -38,7 +38,7 @@ const My_Projects = () => {
     // Delete Project
 
     const handleDelete= (_id) => {
-        Axios.delete(`http://localhost:4000/Projects/${_id}`, {
+        Axios.delete(`https://itrack-server-9s7w.onrender.com/Projects/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         }) 
     }

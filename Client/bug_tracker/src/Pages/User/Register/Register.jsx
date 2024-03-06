@@ -39,7 +39,7 @@ const Register = () => {
             Name, Email, Password, Role 
         }
         try {
-            await Axios.post("http://localhost:4000/Users/Registration", data)
+            await Axios.post("https://itrack-server-9s7w.onrender.com/Users/Registration", data)
             enqueueSnackbar("Successfully Registered !" , { 
                 variant: 'error',
                 anchorOrigin: {

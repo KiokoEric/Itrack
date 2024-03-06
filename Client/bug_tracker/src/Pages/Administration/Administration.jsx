@@ -13,7 +13,7 @@ const Administration = () => {
     useEffect(() => {
 
         const FetchUsers = () => { 
-            Axios.get(`http://localhost:4000/Users/`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Users/`, { 
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

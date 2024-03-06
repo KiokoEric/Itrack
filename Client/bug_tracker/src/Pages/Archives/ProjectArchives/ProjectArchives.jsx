@@ -15,7 +15,7 @@ const ProjectArchives = () => {
     useEffect(() => {
 
     const fetchProjects = async () => {
-        await Axios.get(`http://localhost:4000/ProjectArchives/Archives`, {
+        await Axios.get(`https://itrack-server-9s7w.onrender.com/ProjectArchives/Archives`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 
@@ -35,7 +35,7 @@ const ProjectArchives = () => {
     // Delete Project
 
     const handleDelete= (id) => {
-        Axios.delete(`http://localhost:4000/ProjectArchives/${id}`, {
+        Axios.delete(`https://itrack-server-9s7w.onrender.com/ProjectArchives/${id}`, {
             headers: { authorization: Cookie.auth_token }
         })
         .then(() => { 
@@ -45,7 +45,7 @@ const ProjectArchives = () => {
 
     const handleArchive = (ID) => {
         try {
-            Axios.post(`http://localhost:4000/ProjectArchives/moveProject/${ID}`,  {
+            Axios.post(`https://itrack-server-9s7w.onrender.com/ProjectArchives/moveProject/${ID}`,  {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(

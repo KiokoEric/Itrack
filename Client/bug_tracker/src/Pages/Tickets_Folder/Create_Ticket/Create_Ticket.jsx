@@ -85,7 +85,7 @@ const Create_Ticket = () => {
                 Title, Projects, Description, Category, Priority, Status, Submitted, userOwner
             }
             try {
-                Axios.post("http://localhost:4000/Issues/AddIssue", data , {
+                Axios.post("https://itrack-server-9s7w.onrender.com/Issues/AddIssue", data , {
                     headers: { authorization: Cookie.auth_token },
                 }) 
                 .then(() => { 
@@ -101,7 +101,7 @@ const Create_Ticket = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`http://localhost:4000/Users/`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -116,7 +116,7 @@ const Create_Ticket = () => {
     useEffect(() => {
 
         const FetchProject = () => {
-            Axios.get(`http://localhost:4000/Projects/AllProjects`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Projects/AllProjects`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

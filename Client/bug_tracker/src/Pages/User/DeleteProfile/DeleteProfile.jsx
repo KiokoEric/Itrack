@@ -13,7 +13,7 @@ const DeleteProfile = () => {
 
     const DeleteUser = () => {
         try{
-            Axios.delete(`http://localhost:4000/Users/Delete/${id}`, {
+            Axios.delete(`https://itrack-server-9s7w.onrender.com/Users/Delete/${id}`, {
                 headers: { authorization: Cookie.auth_token }
             })
             .then(() => { 

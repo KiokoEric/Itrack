@@ -16,7 +16,7 @@ const TicketArchives = () => {
     useEffect(() => {
 
         try{
-            Axios.get(`http://localhost:4000/TicketArchives/Archives`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/TicketArchives/Archives`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -32,7 +32,7 @@ const TicketArchives = () => {
     }, [])
 
     const handleDelete= (_id) => {
-        Axios.delete(`http://localhost:4000/TicketArchives/${_id}`, {
+        Axios.delete(`https://itrack-server-9s7w.onrender.com/TicketArchives/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         })
         .then(
@@ -42,7 +42,7 @@ const TicketArchives = () => {
 
     const handleArchive = (ID) => {
         try {
-            Axios.post(`http://localhost:4000/TicketArchives/moveTicket/${ID}`,  {
+            Axios.post(`https://itrack-server-9s7w.onrender.com/TicketArchives/moveTicket/${ID}`,  {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(

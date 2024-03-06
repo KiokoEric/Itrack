@@ -37,7 +37,7 @@ const EditDetails = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`http://localhost:4000/Users/${id}`, {
+            Axios.get(`https://itrack-server-9s7w.onrender.com/Users/${id}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 
@@ -76,7 +76,7 @@ const EditDetails = () => {
             Name, Email, Password 
         }
         try {
-            Axios.put(`http://localhost:4000/Users/${id}`, data , {
+            Axios.put(`https://itrack-server-9s7w.onrender.com/Users/${id}`, data , {
                 headers: { authorization: Cookie.auth_token },
             }) 
         } catch (error) {

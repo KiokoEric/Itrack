@@ -10,17 +10,9 @@ const Login = () => {
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
     const [Cookie, setCookie] = useCookies(["auth_token"]);
-    const [Error, setError] = useState("")
     const [showPassword, setShowPassword] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
 
-    const handleShowToast = () => {
-        setShowToast(true);
-    };
-
-    const handleCloseToast = () => {
-        setShowToast(false);
-    };
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -40,7 +32,6 @@ const Login = () => {
             Email, Password
         }
         try {
-            setError(false)
             const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
@@ -63,7 +54,6 @@ const Login = () => {
             Email : "kiokoerick040@gmail.com" , Password : "Victory2024"
         }
         try {
-            setError(false)
             const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
@@ -85,7 +75,6 @@ const Login = () => {
             Email : "abeldamina@gmail.com" , Password : "Triumph2024"
         }
         try {
-            setError(false)
             const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Administrator", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
@@ -119,16 +108,12 @@ return (
                     <input  type={showPassword ? 'text' : 'password'} name="Password" id="LoginPassword" placeholder="Enter Password..." value={Password} onChange={handlePassword}/>
                     {showPassword ? <i onClick={handleTogglePassword} id='Eye' class="fa-solid fa-eye"></i> : <i id='Eye' onClick={handleTogglePassword} class="fa-solid fa-eye-slash"></i> }
                 </article>
-                <p className='Error'>{Error}</p>
             </div>
             <div className='LoginButton'>
                 <button onClick={onLogin} type="submit">Login</button>
                 <button onClick={DemoLogin}>Demo Login</button>
                 <button onClick={AdministratorLogin} >Administrator Login</button>
             </div>
-            <span id='Toast' className={`toast ${isVisible ? 'hide' : 'show'}`}>
-                <p onClose={handleCloseToast}>Successfully Logged in!</p>  
-            </span>
         </form>
     </section>
     </div>

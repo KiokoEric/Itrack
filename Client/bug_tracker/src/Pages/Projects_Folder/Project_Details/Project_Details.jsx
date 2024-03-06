@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 
 const Project_Details = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [Tickets, setTickets] = useState([])
     const [Cookie, setCookie] = useCookies(["auth_token"]); 
     const [Projects, setProjects] = useState([])

@@ -50,7 +50,7 @@ function App() {
         <Route path='/My_Tickets' element={Administrator || ID  ? <My_Tickets /> : <Navigate to="/" /> } />
         <Route path='/TicketArchives' element={Administrator || ID  ? <TicketArchives /> : <Navigate to="/" /> } />
         <Route path='/TicketDetailsArchives/:id' element={ <TicketArchiveDetails /> } />
-        <Route path='/Administration' element={Administrator || ID  ? <Administration /> : <Navigate to="/" /> }  />
+        <Route path='/Administration' element={Administrator ? <Administration /> : <Navigate to="/" /> }  />
         <Route path='/' element={<Login />} />
         <Route path='/Registration' element={Administrator || ID  ? <Register /> : <Navigate to="/" /> } />
         <Route path='/Profile/:id' element={<Profile />} />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "../Ticket_Details/Ticket_Details.css";
+import LoadingGif from "../../../Images/LoadingGif.gif";
 import Axios from "axios";
 import Moment from 'react-moment';
 import { Link  } from 'react-router-dom';
@@ -12,6 +13,7 @@ const Ticket_Details = () => {
     const UserID = useGetUserID(); 
 
     const { id } = useParams()
+    const [isLoading, setIsLoading] = useState(true);
     const [Cookie, setCookie] = useCookies(["auth_token"])
     const [AllComments, setAllComments] = useState([])
     const [Comment, setComment] = useState("")
@@ -48,6 +50,9 @@ const Ticket_Details = () => {
             setTicketID(Response.data._id)
             setProjectName(Response.data.Projects)
         })
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
     } 
 
     FetchTickets()
@@ -138,8 +143,14 @@ const Ticket_Details = () => {
     }
 
 return (
-    <div className='TicketDetails' >
-        <article className='ProjectSection' >
+    <div>
+        {isLoading ? (
+            <div className='Gif' >
+                <img src={LoadingGif} alt="Loading..." className='Loading' />
+            </div>
+            ) : (
+            <div className='TicketDetails' >
+            <article className='ProjectSection' >
             <section>
                 <h2>Project Details</h2>
                 <figure>
@@ -232,7 +243,10 @@ return (
                 <button onClick={AddComment}>Add Comment</button>
             </section>
         </article>
-    </div>  
+        </div> 
+            )
+        }
+    </div>
 )
 }
 

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import "../All_Tickets/All_Tickets.css";
 import Axios from "axios";
 import Moment from 'react-moment';
+import LoadingGif from "../../../Images/LoadingGif.gif";
 import { Link  } from 'react-router-dom';
 import { useCookies } from "react-cookie";
 
 const Ticket = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [Tickets, setTickets] = useState([])
     const [Projects, setProjects] = useState([])
     const [Cookie, setCookie] = useCookies(["auth_token"]); 
@@ -80,6 +82,9 @@ const Ticket = () => {
                 setTickets(Response.data)
                 
             }) 
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 1000);
         } 
 
         // Fetch Projects
@@ -104,7 +109,7 @@ const Ticket = () => {
             headers: { authorization: Cookie.auth_token }
         })
         .then(
-            window.location.reload()
+            window.location.reload() 
         )
     }
 
@@ -122,85 +127,92 @@ const Ticket = () => {
     }
 
 return (
-    <div className='AllTickets' > 
-        <section>
-            <h1>All Tickets</h1>
-        </section>
-        <section className='TicketSummary' >
-            <div id='HighPriority' >
-                <h1>High Priority Tickets</h1>
-                <h2>{HighPriority}</h2>
-            </div> 
-            <div id='CriticalPriority' >
-                <h1>Critical Priority Tickets</h1>
-                <h2>{CriticalPriority}</h2>
-            </div>  
-            <div id='OpenTickets' > 
-                <h1>Open Status Tickets</h1> 
-                <h2>{Open}</h2>
-            </div>  
-            <div id='InProgressTickets' >
-                <h1>In Progress Tickets</h1>
-                <h2>{Progress}</h2>
-            </div> 
-        </section>
-        <section>
-            <table>
-                <thead>
-                    <th>Priority</th>
-                    <th>Status</th>
-                    <th>Ticket Title</th>
-                    <th>Project Title</th>
-                    <th>Ticket Type</th>
-                    <th>Submitted By</th>
-                    <th>Created</th>
-                    <th>Actions</th>
-                </thead>
-                <div className='AllTicketsDisplay' >
-                {
-                    (Tickets.length > 0) ? 
-                    Tickets.map((Ticket) => {
-                    return(
-                        <tbody>
-                            <Link className='TicketLink' to={`/TicketDetails/${Ticket._id}`} >
+    <div>
+        {isLoading ? (
+            <div className='Gif' >
+                <img src={LoadingGif} alt="Loading..." className='Loading' />
+            </div>
+            ) : (
+        <div className='AllTickets' > 
+            <section>
+                <h1>All Tickets</h1>
+            </section>
+            <section className='TicketSummary' >
+                <div id='HighPriority' >
+                    <h1>High Priority Tickets</h1>
+                    <h2>{HighPriority}</h2>
+                </div> 
+                <div id='CriticalPriority' >
+                    <h1>Critical Priority Tickets</h1>
+                    <h2>{CriticalPriority}</h2>
+                </div>  
+                <div id='OpenTickets' > 
+                    <h1>Open Status Tickets</h1> 
+                    <h2>{Open}</h2>
+                </div>  
+                <div id='InProgressTickets' >
+                    <h1>In Progress Tickets</h1>
+                    <h2>{Progress}</h2>
+                </div> 
+            </section>
+            <section>
+                <table>
+                    <thead>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Ticket Title</th>
+                        <th>Project Title</th>
+                        <th>Ticket Type</th>
+                        <th>Submitted By</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </thead>
+                    <div className='AllTicketsDisplay' >
+                    {
+                        (Tickets.length > 0) ? 
+                        Tickets.map((Ticket) => {
+                        return(
+                            <tbody>
+                                <Link className='TicketLink' to={`/TicketDetails/${Ticket._id}`} >
+                                    <tr>
+                                        <td><span className='PriorityDisplay' >{Ticket.Priority}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span className='StatusDisplay' >{Ticket.Status}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td className='Title'>{Ticket.Title}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{Ticket.Projects}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{Ticket.Category}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{Ticket.Submitted}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><Moment format="DD-MM-YYYY">{Ticket.Date}</Moment></td>
+                                    </tr>
+                                </Link>
                                 <tr>
-                                    <td><span className='PriorityDisplay' >{Ticket.Priority}</span></td>
+                                    <div> 
+                                        <Link to={`/Ticket/${Ticket._id}`} key={Ticket._id} >
+                                            <i  id='EditAction' class="fa-solid fa-pen-to-square"></i>
+                                        </Link>
+                                        <i onClick={() => handleDelete(Ticket._id)} id='DeleteAction' class="fa-solid fa-trash"></i>
+                                        <i onClick={() => handleArchive(Ticket._id)} class="fa-solid fa-box-archive" id='ArchiveIcon'  ></i> 
+                                    </div> 
                                 </tr>
-                                <tr>
-                                    <td><span className='StatusDisplay' >{Ticket.Status}</span></td>
-                                </tr>
-                                <tr>
-                                    <td className='Title'>{Ticket.Title}</td>
-                                </tr>
-                                <tr>
-                                    <td>{Ticket.Projects}</td>
-                                </tr>
-                                <tr>
-                                    <td>{Ticket.Category}</td>
-                                </tr>
-                                <tr>
-                                    <td>{Ticket.Submitted}</td>
-                                </tr>
-                                <tr>
-                                    <td><Moment format="DD-MM-YYYY">{Ticket.Date}</Moment></td>
-                                </tr>
-                            </Link>
-                            <tr>
-                                <div> 
-                                    <Link to={`/Ticket/${Ticket._id}`} key={Ticket._id} >
-                                        <i  id='EditAction' class="fa-solid fa-pen-to-square"></i>
-                                    </Link>
-                                    <i onClick={() => handleDelete(Ticket._id)} id='DeleteAction' class="fa-solid fa-trash"></i>
-                                    <i onClick={() => handleArchive(Ticket._id)} class="fa-solid fa-box-archive" id='ArchiveIcon'  ></i> 
-                                </div> 
-                            </tr>
-                        </tbody> 
-                    )
-                    }) : (<h2 className='NoTickets'>No Tickets Found.</h2> )
-                }
-                </div>
-            </table>
-        </section> 
+                            </tbody> 
+                        )
+                        }) : (<h2 className='NoTickets'>No Tickets Found.</h2> )
+                    }
+                    </div>
+                </table>
+            </section> 
+        </div>)}
     </div>
 )
 }

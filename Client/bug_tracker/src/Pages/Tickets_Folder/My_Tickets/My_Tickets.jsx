@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import "./My_Tickets.css";
 import Axios from "axios";
 import Moment from 'react-moment';
+import LoadingGif from "../../../Images/LoadingGif.gif";
 import { Link  } from 'react-router-dom';
 import { useCookies } from "react-cookie";
 import { useGetUserID } from "../../../Components/Hooks/UseGetUserID";
 
 const My_Tickets = () => {
 
+    const [isLoading, setIsLoading] = useState(true);
     const [Tickets, setTickets] = useState([])
-    const [Cookie, setCookie] = useCookies(["auth_token"]);
+    const [Cookie, setCookie] = useCookies(["auth_token"]); 
 
     const userID = useGetUserID();
 
@@ -22,6 +24,9 @@ const My_Tickets = () => {
             .then((Response) => {
                 setTickets(Response.data)
             })
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 1000);
         } 
         
         if (userID) {
@@ -53,68 +58,78 @@ const My_Tickets = () => {
     }
 
 return (
-    <div className='MyTickets'> 
-        <section>
-            <h1>My Tickets</h1>
-        </section>
-        <section>
-            <table>
-                <thead>
-                    <th>Priority</th>
-                    <th>Status</th>
-                    <th>Ticket Title</th>
-                    <th>Project Title</th>
-                    <th>Ticket Type</th>
-                    <th>Submitted By</th>
-                    <th>Created</th>
-                    <th>Actions</th>
-                </thead>
-                <div className='MyTicketsDisplay' >
-                {
-                (Tickets.length > 0) ? 
-                Tickets.map((Ticket) => { 
-                return(
-                    <tbody>
-                        <Link className='TicketLink' to={`/TicketDetails/${Ticket._id}`} >
+    <div>
+        {isLoading ? (
+            <div className='Gif' >
+                <img src={LoadingGif} alt="Loading..." className='Loading' />
+            </div>
+            ) : (
+            <div className='MyTickets'> 
+            <section>
+                <h1>My Tickets</h1>
+            </section>
+            <section>
+                <table>
+                    <thead>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Ticket Title</th>
+                        <th>Project Title</th>
+                        <th>Ticket Type</th>
+                        <th>Submitted By</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </thead>
+                    <div className='MyTicketsDisplay' >
+                    {
+                    (Tickets.length > 0) ? 
+                    Tickets.map((Ticket) => { 
+                    return(
+                        <tbody>
+                            <Link className='TicketLink' to={`/TicketDetails/${Ticket._id}`} >
+                                <tr>
+                                    <td><span className='PriorityDisplay' >{Ticket.Priority}</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span className='StatusDisplay' >{Ticket.Status}</span></td>
+                                </tr>
+                                <tr>
+                                    <td>{Ticket.Title}</td>
+                                </tr>
+                                <tr>
+                                    <td>{Ticket.Projects}</td>
+                                </tr>
+                                <tr>
+                                    <td>{Ticket.Category}</td>
+                                </tr>
+                                <tr>
+                                    <td>{Ticket.Submitted}</td>
+                                </tr>
+                                <tr>
+                                    <td><Moment format="DD-MM-YYYY">{Ticket.Date}</Moment></td>
+                                </tr>
+                            </Link>
                             <tr>
-                                <td><span className='PriorityDisplay' >{Ticket.Priority}</span></td>
-                            </tr>
-                            <tr>
-                                <td><span className='StatusDisplay' >{Ticket.Status}</span></td>
-                            </tr>
-                            <tr>
-                                <td>{Ticket.Title}</td>
-                            </tr>
-                            <tr>
-                                <td>{Ticket.Projects}</td>
-                            </tr>
-                            <tr>
-                                <td>{Ticket.Category}</td>
-                            </tr>
-                            <tr>
-                                <td>{Ticket.Submitted}</td>
-                            </tr>
-                            <tr>
-                                <td><Moment format="DD-MM-YYYY">{Ticket.Date}</Moment></td>
-                            </tr>
-                        </Link>
-                        <tr>
-                            <div>
-                                <Link to={`/Ticket/${Ticket._id}`} key={Ticket._id} >
-                                    <i  id='MyTicketEdit' class="fa-solid fa-pen-to-square"></i>
-                                </Link>
-                                <i onClick={() => handleDelete(Ticket._id)} id='DeleteActions' class="fa-solid fa-trash"></i>
-                                <i onClick={() => handleArchive(Ticket._id)} class="fa-solid fa-box-archive" id='ArchiveIcon'  ></i> 
-                            </div>
-                        </tr> 
-                    </tbody>
-                )
-                }) : (<h2 className='NoTickets'>No Tickets Found.</h2> )
-                }
-                </div>
-            </table>
-        </section> 
+                                <div>
+                                    <Link to={`/Ticket/${Ticket._id}`} key={Ticket._id} >
+                                        <i  id='MyTicketEdit' class="fa-solid fa-pen-to-square"></i>
+                                    </Link>
+                                    <i onClick={() => handleDelete(Ticket._id)} id='DeleteActions' class="fa-solid fa-trash"></i>
+                                    <i onClick={() => handleArchive(Ticket._id)} class="fa-solid fa-box-archive" id='ArchiveIcon'  ></i> 
+                                </div>
+                            </tr> 
+                        </tbody>
+                    )
+                    }) : (<h2 className='NoTickets'>No Tickets Found.</h2> )
+                    }
+                    </div>
+                </table>
+            </section> 
+        </div>
+            )
+        }
     </div>
+    
 )
 }
 

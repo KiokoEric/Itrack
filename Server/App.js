@@ -21,8 +21,6 @@ app.use(cookieParser())
 
 const dbUrl = process.env.MONGODB_URL
 
-// mongoose.set("strictQuery", true);
-
 mongoose.connect(dbUrl)
 .then(() => console.log("Connected to the database!"))
 

@@ -35,7 +35,7 @@ const Project_Details = () => {
 
     useEffect(() => {
 
-        const FetchTickets = () => {
+        const FetchTickets = () => { 
             Axios.get(`http://localhost:4000/Issues/Projects/${ProjectName}`, {
             headers: { authorization: Cookie.auth_token },
             }) 

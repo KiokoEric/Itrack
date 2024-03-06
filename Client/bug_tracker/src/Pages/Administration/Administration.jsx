@@ -10,8 +10,6 @@ const Administration = () => {
     const [Users, setUsers] = useState([])
     const [Cookie, setCookie] = useCookies(["auth_token"]);
 
-    const userID = useGetUserID();
-
     useEffect(() => {
 
         const FetchUsers = () => { 

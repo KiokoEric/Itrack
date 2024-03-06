@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "../Create_Ticket/Create_Ticket.css";
 import Axios from "axios";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
 import { useGetUserID } from "../../../Components/Hooks/UseGetUserID";
 
 const Create_Ticket = () => {

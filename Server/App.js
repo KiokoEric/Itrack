@@ -10,7 +10,7 @@ dotenv.config();
 // Middleware
 
 app.use(cors({
-    origin: ["https://itrack-pdps.onrender.com"],
+    origin: ["http://localhost:3000"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 }))

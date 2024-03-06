@@ -20,21 +20,23 @@ const Project_Details = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        Axios.get(`https://itrack-server-o39t.onrender.com/Projects/${id}`, {
+        Axios.get(`http://localhost:4000/Projects/${id}`, {
         headers: { authorization: Cookie.auth_token }
         }) 
         .then((Response) => {
-            console.log(Response.data.Assigned)
             setProjects(Response.data)
             setAssigned(Response.data.Assigned)
             setProjectName(Response.data.Title)
         }) 
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
     },[]) 
 
     useEffect(() => {
 
         const FetchTickets = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/Projects/${ProjectName}`, {
+            Axios.get(`http://localhost:4000/Issues/Projects/${ProjectName}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -48,7 +50,7 @@ const Project_Details = () => {
         },[ProjectName])
 
     const handleDelete= (_id) => {
-        Axios.delete(`https://itrack-server-o39t.onrender.com/Issues/${_id}`, {
+        Axios.delete(`http://localhost:4000/Issues/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         })
         .then(

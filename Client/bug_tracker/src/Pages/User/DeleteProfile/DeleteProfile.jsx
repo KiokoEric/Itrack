@@ -9,13 +9,12 @@ const DeleteProfile = () => {
 
     const [ Cookie, setCookie ] = useCookies(["auth_token"]); 
     const { id } = useParams()
-
-    const myID = useGetUserID();
+    
     const navigate = useNavigate()
 
     const DeleteUser = () => {
         try{
-            Axios.delete(`https://itrack-server-o39t.onrender.com/Users/Delete/${id}`, {
+            Axios.delete(`http://localhost:4000/Users/Delete/${id}`, {
                 headers: { authorization: Cookie.auth_token }
             })
             .then(() => { 

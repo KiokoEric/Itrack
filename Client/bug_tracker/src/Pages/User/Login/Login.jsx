@@ -32,7 +32,7 @@ const Login = () => {
             Email, Password
         }
         try {
-            const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Login", data)
+            const response = await Axios.post("http://localhost:4000/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
                 enqueueSnackbar("Logged in successfully!" , { 
@@ -43,18 +43,24 @@ const Login = () => {
                     },
                 }) 
         } catch (error) { 
-            enqueueSnackbar("Login unsuccessful!" , {variant: "error"})
+            enqueueSnackbar("Login unsuccessful!" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                },
+            }) 
             console.log(error)
         }
     }
 
-    const DemoLogin = async (e) => {
+    const DemoLogin = async (e) => { 
         e.preventDefault()
         const data = {
             Email : "kiokoerick040@gmail.com" , Password : "Victory2024"
         }
         try {
-            const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Login", data)
+            const response = await Axios.post("http://localhost:4000/Users/Login", data)
                 setCookie("auth_token", response.data.Token)
                 window.localStorage.setItem("UserID", response.data.UserID)
                 enqueueSnackbar("Logged in successfully!" , { 
@@ -65,6 +71,13 @@ const Login = () => {
                     },
                 }) 
         } catch (error) { 
+            enqueueSnackbar("Login unsuccessful!" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                },
+            }) 
             console.log(error) 
         }
     }
@@ -75,9 +88,9 @@ const Login = () => {
             Email : "abeldamina@gmail.com" , Password : "Triumph2024"
         }
         try {
-            const response = await Axios.post("https://itrack-server-o39t.onrender.com/Users/Administrator", data)
+            const response = await Axios.post("http://localhost:4000/Users/Administrator", data)
                 setCookie("auth_token", response.data.Token)
-                window.localStorage.setItem("UserID", response.data.UserID)
+                window.localStorage.setItem("Administrator", "Administration")
                 enqueueSnackbar("Logged in successfully!" , { 
                     variant: 'success',
                     anchorOrigin: {
@@ -86,7 +99,13 @@ const Login = () => {
                     },
                     }) 
         } catch (error) { 
-            enqueueSnackbar("Login unsuccessful!" , {variant: "error"})
+            enqueueSnackbar("Login unsuccessful!" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                },
+            }) 
             console.log(error)
         }
     }

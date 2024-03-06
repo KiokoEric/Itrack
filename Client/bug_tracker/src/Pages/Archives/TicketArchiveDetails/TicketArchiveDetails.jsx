@@ -19,7 +19,7 @@ const TicketArchiveDetails = () => {
     useEffect(() => {
 
         const FetchTickets = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/TicketArchives/${id}`, {
+            Axios.get(`http://localhost:4000/TicketArchives/${id}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -37,7 +37,7 @@ const TicketArchiveDetails = () => {
     useEffect(() => {
 
         const FetchComments = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Comments/Comment/${TicketID}`, {
+            Axios.get(`http://localhost:4000/Comments/Comment/${TicketID}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

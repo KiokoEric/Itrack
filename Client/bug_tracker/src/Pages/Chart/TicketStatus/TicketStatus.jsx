@@ -23,7 +23,7 @@ const TicketStatus = () => {
     useEffect(() => {
 
         const FetchOpen = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/StatusLength/Open`, {
+            Axios.get(`http://localhost:4000/Issues/StatusLength/Open`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -32,7 +32,7 @@ const TicketStatus = () => {
         } 
 
         const FetchProgressStatus = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/StatusLength/In_Progress`, {
+            Axios.get(`http://localhost:4000/Issues/StatusLength/In_Progress`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -41,7 +41,7 @@ const TicketStatus = () => {
         } 
 
         const FetchResolvedStatus = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/StatusLength/Resolved`, {
+            Axios.get(`http://localhost:4000/Issues/StatusLength/Resolved`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -50,7 +50,7 @@ const TicketStatus = () => {
         } 
 
         const FetchDoneStatus = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/StatusLength/Done`, {
+            Axios.get(`http://localhost:4000/Issues/StatusLength/Done`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

@@ -59,7 +59,7 @@ const Edit_Project = () => {
     }
 
     useEffect(() => {
-        Axios.get(`https://itrack-server-o39t.onrender.com/Projects/${id}`, {
+        Axios.get(`http://localhost:4000/Projects/${id}`, {
                 headers: { authorization: Cookie.auth_token },
             }) 
         .then((Data) => { 
@@ -80,7 +80,7 @@ const Edit_Project = () => {
             Title, Description, Priority, StartDate, EndDate, Manager, Assigned, Image, userOwner
         }
         try {
-            Axios.put(`https://itrack-server-o39t.onrender.com/Projects/${id}`, data , {
+            Axios.put(`http://localhost:4000/Projects/${id}`, data , {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(() => { 
@@ -95,7 +95,7 @@ const Edit_Project = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/`, {
+            Axios.get(`http://localhost:4000/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

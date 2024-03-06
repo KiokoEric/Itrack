@@ -16,7 +16,7 @@ const ProjectArchiveDetails = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        Axios.get(`https://itrack-server-o39t.onrender.com/ProjectArchives/${id}`, {
+        Axios.get(`http://localhost:4000/ProjectArchives/${id}`, {
         headers: { authorization: Cookie.auth_token }
         }) 
         .then((Response) => {
@@ -29,7 +29,7 @@ const ProjectArchiveDetails = () => {
     useEffect(() => {
 
         const FetchTickets = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/Projects/${ProjectName}`, {
+            Axios.get(`http://localhost:4000/Issues/Projects/${ProjectName}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

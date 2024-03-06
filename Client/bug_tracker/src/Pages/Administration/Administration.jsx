@@ -15,7 +15,7 @@ const Administration = () => {
     useEffect(() => {
 
         const FetchUsers = () => { 
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/`, {
+            Axios.get(`http://localhost:4000/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

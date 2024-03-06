@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from "axios";
 import "../Register/Register.css";
 import { useState } from 'react';
+import { useSnackbar } from 'notistack';
 
 const Register = () => { 
 
@@ -9,18 +10,8 @@ const Register = () => {
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
     const [Role, setRole] = useState("")
-    const [Error, setError] = useState("")
     const [showPassword, setShowPassword] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [showToast, setShowToast] = useState(false);
-
-    const handleShowToast = () => {
-        setShowToast(true);
-    };
-
-    const handleCloseToast = () => {
-        setShowToast(false);
-    };
+    const { enqueueSnackbar } = useSnackbar();
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -48,16 +39,22 @@ const Register = () => {
             Name, Email, Password, Role 
         }
         try {
-            setError(false)
-            await Axios.post("https://itrack-server-o39t.onrender.com/Users/Registration", data)
-            .then(() => {
-                setTimeout(() => {
-                    setIsVisible(false);
-                })
+            await Axios.post("http://localhost:4000/Users/Registration", data)
+            enqueueSnackbar("Successfully Registered !" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right', 
+                },
             }) 
         } catch (error) {
-            setError("Invalid Username or Email!") 
-            console.error(error)
+            enqueueSnackbar("Registered successfully!" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right', 
+                },
+            }) 
         }
     }
 
@@ -100,12 +97,8 @@ return (
                         <option value="Technical Writer">Technical Writer</option>
                         <option value="UI/UX Designer">UI/UX Designer</option>
                     </select>
-                    <p className='Error'>{Error}</p>
                 </div>
                 <button onClick={onRegister} type="submit">Create New User</button>
-                <span id='Toast' className={`toast ${isVisible ? 'hide' : 'show'}`}>
-                    <p onClose={handleCloseToast}>New User Created </p>  
-                </span>
             </form>
         </section> 
     </div>

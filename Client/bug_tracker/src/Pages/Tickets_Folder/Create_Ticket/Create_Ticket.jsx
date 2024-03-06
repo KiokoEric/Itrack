@@ -8,7 +8,6 @@ import { useGetUserID } from "../../../Components/Hooks/UseGetUserID";
 const Create_Ticket = () => {
 
     const UserID = useGetUserID();
-    const navigate = useNavigate() 
 
     const [Cookie, setCookie] = useCookies(["auth_token"]);
     const [Users, setUsers] = useState([])
@@ -87,7 +86,7 @@ const Create_Ticket = () => {
                 Title, Projects, Description, Category, Priority, Status, Submitted, userOwner
             }
             try {
-                Axios.post("https://itrack-server-o39t.onrender.com/Issues/AddIssue", data , {
+                Axios.post("http://localhost:4000/Issues/AddIssue", data , {
                     headers: { authorization: Cookie.auth_token },
                 }) 
                 .then(() => { 
@@ -103,7 +102,7 @@ const Create_Ticket = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/`, {
+            Axios.get(`http://localhost:4000/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -118,7 +117,7 @@ const Create_Ticket = () => {
     useEffect(() => {
 
         const FetchProject = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Projects/AllProjects`, {
+            Axios.get(`http://localhost:4000/Projects/AllProjects`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

@@ -20,7 +20,7 @@ import { IoFolderOpenSharp } from "react-icons/io5";
 
 export const SideBar = () => {
 
-    const [ Cookie, setCookie ] = useCookies(["auth_token"]);
+    const [Cookie, setCookie] = useCookies(["auth_token"]);
     const [Showproject, setShowproject] = useState(false);
     const [Showticket, setShowticket] = useState(false);
 
@@ -97,10 +97,10 @@ return (
                     ) : ""
                     }
                 </section>
-                <Link to="/Administration" className='Link' >
+                {Administrator ? <Link to="/Administration" className='Link' >
                     <SiCommerzbank className='ReactIcon'  />
-                    Administration
-                </Link>
+                        Administration
+                    </Link> : null}
             </div>
         </section>
         <section>

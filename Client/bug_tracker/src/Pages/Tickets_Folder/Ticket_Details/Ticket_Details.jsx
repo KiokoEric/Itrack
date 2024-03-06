@@ -39,7 +39,7 @@ const Ticket_Details = () => {
     useEffect(() => {
 
     const FetchTickets = () => {
-        Axios.get(`https://itrack-server-o39t.onrender.com/Issues/${id}`, {
+        Axios.get(`http://localhost:4000/Issues/${id}`, {
         headers: { authorization: Cookie.auth_token },
         }) 
         .then((Response) => {
@@ -59,7 +59,7 @@ const Ticket_Details = () => {
     useEffect(() => {
 
         const FetchProject = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Projects/Title/${ProjectName}`, {
+            Axios.get(`http://localhost:4000/Projects/Title/${ProjectName}`, {
             headers: { authorization: Cookie.auth_token }
             }) 
             .then((Response) => {
@@ -79,7 +79,7 @@ const Ticket_Details = () => {
     useEffect(() => {
 
         const FetchComments = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Comments/Comment/${TicketID}`, {
+            Axios.get(`http://localhost:4000/Comments/Comment/${TicketID}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -98,7 +98,7 @@ const Ticket_Details = () => {
     useEffect(() => {
 
         const FetchUsers = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/`, {
+            Axios.get(`http://localhost:4000/Users/`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -122,7 +122,7 @@ const Ticket_Details = () => {
                 Comment, TicketID, Submitted, userOwner
             }
             try {
-                Axios.post("https://itrack-server-o39t.onrender.com/Comments/AddComment", data , {
+                Axios.post("http://localhost:4000/Comments/AddComment", data , {
                     headers: { authorization: Cookie.auth_token },
                 }) 
                 .then(() => { 

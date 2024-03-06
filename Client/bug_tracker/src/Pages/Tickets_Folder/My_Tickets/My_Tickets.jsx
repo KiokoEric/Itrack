@@ -9,7 +9,6 @@ import { useGetUserID } from "../../../Components/Hooks/UseGetUserID";
 const My_Tickets = () => {
 
     const [Tickets, setTickets] = useState([])
-    const [Date,setDate] = useState("")
     const [Cookie, setCookie] = useCookies(["auth_token"]);
 
     const userID = useGetUserID();
@@ -17,22 +16,21 @@ const My_Tickets = () => {
     useEffect(() => {
 
         const FetchTickets = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/${userID}/Issues`, { 
+            Axios.get(`http://localhost:4000/Issues/${userID}/Issues`, { 
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
                 setTickets(Response.data)
-                setDate(Response.data.Date)
             })
         } 
-    
+        
         if (userID) {
             FetchTickets()
         }
         },[])
 
     const handleDelete= (_id) => {
-        Axios.delete(`https://itrack-server-o39t.onrender.com/Issues/${_id}`, {
+        Axios.delete(`http://localhost:4000/Issues/${_id}`, {
             headers: { authorization: Cookie.auth_token }
         })
         .then(
@@ -43,7 +41,7 @@ const My_Tickets = () => {
     const handleArchive= (ID) => {
 
         try {
-            Axios.post(`https://itrack-server-o39t.onrender.com/Issues/moveTicket/${ID}`, {
+            Axios.post(`http://localhost:4000/Issues/moveTicket/${ID}`, {
                 headers: { authorization: Cookie.auth_token },
             }) 
             .then(() => { 

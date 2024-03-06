@@ -23,7 +23,7 @@ const Home = () => {
     useEffect(() => {
 
     const fetchProjects = async () => {
-        await Axios.get(`https://itrack-server-o39t.onrender.com/Projects/AllProjects`, {
+        await Axios.get(`http://localhost:4000/Projects/AllProjects`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 
@@ -42,7 +42,7 @@ const Home = () => {
     useEffect(() => {
 
     const ProjectNumber = async () => {
-        await Axios.get(`https://itrack-server-o39t.onrender.com/Projects/AllProjectsLength`, {
+        await Axios.get(`http://localhost:4000/Projects/AllProjectsLength`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 
@@ -60,7 +60,7 @@ const Home = () => {
     useEffect(() => {
 
     const TicketNumber = async () => {
-        await Axios.get(`https://itrack-server-o39t.onrender.com/Issues/AllIssuesLength`, {
+        await Axios.get(`http://localhost:4000/Issues/AllIssuesLength`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 
@@ -78,7 +78,7 @@ const Home = () => {
     useEffect(() => {
 
     const UserNumber = async () => {
-        await Axios.get(`https://itrack-server-o39t.onrender.com/Users/UsersLength`, {
+        await Axios.get(`http://localhost:4000/Users/UsersLength`, {
         headers: { authorization: Cookie.auth_token },
         
         }) 

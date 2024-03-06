@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import Axios from "axios";
 import "../EditDetails/EditDetails.css";
+import { useSnackbar } from 'notistack';
 import { useCookies } from "react-cookie";
-import {useNavigate, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useState } from 'react';
 
 const EditDetails = () => { 
@@ -13,19 +14,8 @@ const EditDetails = () => {
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [showToast, setShowToast] = useState(false);
+    const { enqueueSnackbar } = useSnackbar();
     const { id } = useParams()
-
-    const navigate = useNavigate()
-
-    const handleShowToast = () => {
-        setShowToast(true);
-    };
-
-    const handleCloseToast = () => {
-        setShowToast(false);
-    };
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -47,7 +37,7 @@ const EditDetails = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/${id}`, {
+            Axios.get(`http://localhost:4000/Users/${id}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 
@@ -55,9 +45,23 @@ const EditDetails = () => {
                 setEmail(Data.data.Email)
                 setPassword(Data.data.Password)
             })
+            enqueueSnackbar("Successfully Edited!" , { 
+                variant: 'success',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right', 
+                },
+            }) 
         }
         catch (Error){
             console.log(Error)
+            enqueueSnackbar("Edit Unsuccessful!" , { 
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                },
+            }) 
         }
         }
 
@@ -69,17 +73,12 @@ const EditDetails = () => {
         e.preventDefault()
 
         const data = {
-            Name, Email, Password
+            Name, Email, Password 
         }
         try {
-            Axios.put(`https://itrack-server-o39t.onrender.com/Users/${id}`, data , {
+            Axios.put(`http://localhost:4000/Users/${id}`, data , {
                 headers: { authorization: Cookie.auth_token },
             }) 
-            .then(() => { 
-                setTimeout(() => {
-                    setIsVisible(false);
-                })
-            })
         } catch (error) {
             console.error(error) 
         }
@@ -109,9 +108,6 @@ return (
                     </article>
                 </div>
                 <button onClick={EditUser} type="submit">Save Changes</button>
-                <span id='Toast' className={`toast ${isVisible ? 'hide' : 'show'}`}>
-                    <p onClose={handleCloseToast}>Successfully Logged in!</p>  
-                </span>
             </form>
         </section> 
     </div>

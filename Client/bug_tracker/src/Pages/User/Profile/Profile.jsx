@@ -12,7 +12,6 @@ const Profile = () => {
     const [Email, setEmail] = useState("")
     const [Role, setRole] = useState("")
     const { id } = useParams()
-    const [Success, setSuccess] = useState("")
 
     const Administrator = AdministrationLogin()
     const navigate = useNavigate()
@@ -33,7 +32,7 @@ const Profile = () => {
 
         const FetchUser =() => {
         try{
-            Axios.get(`https://itrack-server-o39t.onrender.com/Users/${id}`, {
+            Axios.get(`http://localhost:4000/Users/${id}`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Data) => { 
@@ -79,7 +78,6 @@ return (
                     <label for=""><p>Assigned Role</p></label>
                     <input type="text" name="text" id="Role"  value={Role} onChange={handleRole} readOnly />
                 </div>
-                <h4 className='Success'>{Success}</h4>
                 <div>
                     {
                         Administrator ? <button onClick={Edit} type="submit"><i class="fa-solid fa-pen-to-square"></i>Edit Details</button> : null

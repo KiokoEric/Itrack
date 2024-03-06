@@ -22,7 +22,7 @@ const TicketType = () => {
     useEffect(() => {
 
         const FetchDefect = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/CategoryLength/Defect`, {
+            Axios.get(`http://localhost:4000/Issues/CategoryLength/Defect`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -31,7 +31,7 @@ const TicketType = () => {
         } 
 
         const FetchDocumentation = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/CategoryLength/Documentation`, {
+            Axios.get(`http://localhost:4000/Issues/CategoryLength/Documentation`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -40,7 +40,7 @@ const TicketType = () => {
         } 
 
         const FetchEnhancement = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/CategoryLength/Enhancement`, {
+            Axios.get(`http://localhost:4000/Issues/CategoryLength/Enhancement`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -49,7 +49,7 @@ const TicketType = () => {
         } 
 
         const FetchFeature = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/CategoryLength/Feature_Request`, {
+            Axios.get(`http://localhost:4000/Issues/CategoryLength/Feature_Request`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {
@@ -58,7 +58,7 @@ const TicketType = () => {
         } 
 
         const FetchHardware = () => {
-            Axios.get(`https://itrack-server-o39t.onrender.com/Issues/CategoryLength/Hardware_Problem`, {
+            Axios.get(`http://localhost:4000/Issues/CategoryLength/Hardware_Problem`, {
             headers: { authorization: Cookie.auth_token },
             }) 
             .then((Response) => {

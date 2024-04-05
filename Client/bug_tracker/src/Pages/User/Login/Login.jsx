@@ -42,6 +42,7 @@ const Login = () => {
                         horizontal: 'right', 
                     },
                 }) 
+                window.location.reload();
         } catch (error) { 
             enqueueSnackbar("Login unsuccessful!" , { 
                 variant: 'error',
@@ -70,6 +71,7 @@ const Login = () => {
                         horizontal: 'right',
                     },
                 }) 
+            window.location.reload();
         } catch (error) { 
             enqueueSnackbar("Login unsuccessful!" , { 
                 variant: 'error',
@@ -98,6 +100,7 @@ const Login = () => {
                         horizontal: 'right', 
                     },
                     }) 
+                window.location.reload();
         } catch (error) { 
             enqueueSnackbar("Login unsuccessful!" , { 
                 variant: 'error',

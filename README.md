@@ -1,4 +1,4 @@
-<h1 align="center"> Welcome to ITRACK </h1>
+<h1 align="center"> Welcome to Itrack </h1>
 
 <div align="center" >
 Itrack is a bug tracker designed to help development teams manage and track issues or bugs in their software projects. It serves as a centralized system for organizing, prioritizing, and monitoring the progress of identified problems within a software application or system.
